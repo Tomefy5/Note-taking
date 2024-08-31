@@ -1,0 +1,31 @@
+*,::after,::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+}
+
+div.container.list-notes.card {
+    width: 95%;
+    border: none;
+}
+
+ul.list-group.list-group-flush {
+    width: 100%;
+}
+
+.menu-bar {
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .app {
+        width: 80vw
+    }
+}
