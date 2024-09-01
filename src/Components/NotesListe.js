@@ -6,9 +6,14 @@ class NotesListe extends Component {
         return (
             <div className="container card mb-3 list-notes">
                 <ul className="list-group list-group-flush ">
-                    <Note />
-                    <Note />
-                    <Note />
+                    {
+                        this.props.notes.map((note,index) => {
+                            return (
+                                <Note   key={index}
+                                        note={note} />
+                            )
+                        })
+                    }
                 </ul>
             </div>
         )
