@@ -10,7 +10,9 @@ class NotesListe extends Component {
                         this.props.notes.map((note,index) => {
                             return (
                                 <Note   key={index}
-                                        note={note} />
+                                        index={index}
+                                        note={note} 
+                                />
                             )
                         })
                     }
