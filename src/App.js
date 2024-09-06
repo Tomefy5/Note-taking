@@ -2,7 +2,7 @@ import './bootstrap-5.3.3-dist/css/bootstrap.min.css'
 import './fontawesome-free-6.0.0-beta3-web/css/all.min.css'
 import './App.css';
 import { Component } from 'react';
-import { Route, Routes, useLocation,Redirect } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import SearchInput from './Components/SearchInput';
 import NotesListe from './Components/NotesListe';
 import MenuBar from './Components/MenuBar';
