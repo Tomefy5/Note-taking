@@ -17,6 +17,7 @@ class App extends Component {
       notes: savedNotes ? JSON.parse(savedNotes) : [],
       functions: {
         addNewNote: this.addNewNote,
+        saveNoteHandler: this.saveNoteHandler,
       }
     }
   }
@@ -35,12 +36,25 @@ class App extends Component {
       const newNote = {
         id: this.state.notes.length + 1,
         title: newNoteTitle,
-        body: ""
+        body: "",
+        favorite: false
       }
       this.setState({
         notes: [...this.state.notes, newNote]
       })
     }
+  }
+
+  saveNoteHandler = (noteId) => {
+    const textarea = document.querySelector("textarea")
+
+    this.setState((prevState) => ({
+      notes: prevState.notes.map((note) => {
+      return  note.id === noteId 
+              ? { ...note,  body: textarea.value} 
+              : note
+      })
+    }))
   }
   render() {
     const isDetailPage = this.props.location.pathname.startsWith('/note/')
@@ -56,7 +70,7 @@ class App extends Component {
             />
             <Route 
                   path='/note/:id'
-                  element={<NoteDetailWrapper notes={this.state.notes} />} 
+                  element={<NoteDetailWrapper notes={this.state.notes} functions={this.state.functions}/>} 
             />
           </Routes>
       </div>
