@@ -2,7 +2,7 @@ import './bootstrap-5.3.3-dist/css/bootstrap.min.css'
 import './fontawesome-free-6.0.0-beta3-web/css/all.min.css'
 import './App.css';
 import { Component } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation,Redirect } from 'react-router-dom';
 import SearchInput from './Components/SearchInput';
 import NotesListe from './Components/NotesListe';
 import MenuBar from './Components/MenuBar';
@@ -18,6 +18,7 @@ class App extends Component {
       functions: {
         addNewNote: this.addNewNote,
         saveNoteHandler: this.saveNoteHandler,
+        deleteHandler: this.deleteHandler
       }
     }
   }
@@ -56,6 +57,12 @@ class App extends Component {
       })
     }))
   }
+
+  deleteHandler = (noteId) => {
+    this.setState((prevState) => ({
+      notes: prevState.notes.filter((todo) => (todo.id !== noteId))
+    }))
+  }
   render() {
     const isDetailPage = this.props.location.pathname.startsWith('/note/')
     return (
@@ -66,7 +73,7 @@ class App extends Component {
           <Routes>
             <Route  
                   path='/' 
-                  element={<NotesListe notes={this.state.notes} />}
+                  element={<NotesListe notes={this.state.notes} deleteHandler={this.deleteHandler} />}
             />
             <Route 
                   path='/note/:id'

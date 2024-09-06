@@ -5,7 +5,7 @@ class NoteDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            text: this.props.note.body
+            text: this.props.note.body ? this.props.note.body : "" 
         }
     }
 

@@ -9,6 +9,9 @@ class Note extends Component {
                 <Link to={`/note/${this.props.index}`}>
                     <button className="btn btn-outline-success">See</button>
                 </Link>
+                {/* <button className="btn btn-outline-danger" onClick={this.props.deleteHandler}>
+                    <i className="fas fa-trash"></i>
+                </button> */}
             </li>
         )
     }

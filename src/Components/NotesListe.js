@@ -12,6 +12,7 @@ class NotesListe extends Component {
                                 <Note   key={index}
                                         index={index}
                                         note={note} 
+                                        deleteHandler={this.props.deleteHandler}
                                 />
                             )
                         })

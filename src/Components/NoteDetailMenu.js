@@ -18,7 +18,7 @@ class NoteDetailMenu extends Component {
                     </button>
                 </div>
                 <div>
-                    <button className="btn btn-danger">
+                    <button className="btn btn-danger" onClick={() => this.props.functions.deleteHandler(this.props.note.id)}>
                         <i className="fas fa-trash"></i>
                     </button>
                 </div>
@@ -27,7 +27,6 @@ class NoteDetailMenu extends Component {
                         <i className="fas fa-star"></i>
                     </button>
                 </div>
-                {console.log(this.props)}
             </div>
         )
     }
