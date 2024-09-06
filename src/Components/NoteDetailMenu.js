@@ -6,7 +6,7 @@ class NoteDetailMenu extends Component {
         return (
             <div className="navbar navbar-expand-lg bg-light d-flex justify-content-around">
                 <div>
-                    <Link to={'/'}>
+                    <Link to={'/Note-taking'}>
                         <button className="btn btn-secondary">
                             <i className="fas fa-reply"></i>
                         </button>
